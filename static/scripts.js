@@ -1,31 +1,4 @@
-document.getElementById('fileUpload').addEventListener('change', handleFileUpload);
-document.getElementById('chatForm').addEventListener('submit', sendQuery);
-document.getElementById('clearButton').addEventListener('click', clearConversation);
-
-function handleFileUpload(event) {
-    let formData = new FormData();
-    let files = event.target.files;
-    for (let i = 0; i < files.length; i++) {
-        formData.append('pdfs', files[i]);
-    }
-
-    fetch('/process', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.message) {
-            document.querySelector('.chatContainer').style.display = 'block';
-        }
-    })
-    .catch(error => console.error('Error:', error));
-
-    // Prevent default form submission
-    event.preventDefault();
-}
-
-function sendQuery(event) {
+document.getElementById('chatForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent default form submission
 
     // Disable form while processing request
@@ -50,11 +23,10 @@ function sendQuery(event) {
     })
     .then(response => response.json())
     .then(data => {
-        let chatHistory = data.chat_history;
-
         // Clear existing chat messages before adding new ones
         clearChatMessages();
 
+        let chatHistory = data.chat_history;
         chatHistory.forEach(entry => {
             let messageElement = createMessage(entry.sender, entry.message);
             document.getElementById('chatGPTResponse').appendChild(messageElement);
@@ -70,38 +42,68 @@ function sendQuery(event) {
         // Re-enable form on error
         document.getElementById('chatForm').classList.remove('disabled');
     });
-}
+});
 
-function createMessage(sender, message) {
-    let messageDiv = document.createElement('div');
-    messageDiv.classList.add('chat-message');
-    if (sender === 'user') {
-        messageDiv.classList.add('user');
-        messageDiv.innerHTML = `
-            <div class="avatar">
-                <img src="https://img.redbull.com/images/c_crop,x_510,y_0,h_1234,w_926/c_fill,w_450,h_600/q_auto:low,f_auto/redbullcom/2020/9/16/qsavzzs1hulerklkkzzp/ac-header">
-            </div>
-            <div class="message">${message}</div>
-        `;
-    } else {
-        messageDiv.classList.add('bot');
-        messageDiv.innerHTML = `
-            <div class="avatar">
-                <img src="https://i.ibb.co/cN0nmSj/Screenshot-2023-05-28-at-02-37-21.png">
-            </div>
-            <div class="message">${message}</div>
-        `;
+function handleFileUpload(event) {
+    const fileInput = event.target;
+    const files = fileInput.files;
+
+    // Display "Processing" message
+    const processingMessage = "Processing files...";
+    appendBotMessage(processingMessage);
+
+    const formData = new FormData();
+    for (let i = 0; i < files.length; i++) {
+        formData.append('pdfs', files[i]);
     }
-    return messageDiv;
+
+    fetch('/process', {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => response.json())
+    .then(data => {
+        const readyMessage = "Ready to answer questions based on uploaded files.";
+        appendBotMessage(readyMessage);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        const errorMessage = "Error processing files. Please try again.";
+        appendBotMessage(errorMessage);
+    });
 }
 
-function clearConversation() {
-    clearChatMessages(); // Clear displayed messages
-    // Optionally, clear any stored data (arrays, variables, etc.)
-    // Example: chatHistory = [];
-    // Example: conversationId = null;
+function createMessage(sender, text) {
+    const message = document.createElement('div');
+    message.classList.add('message', sender);
+
+    const img = document.createElement('img');
+    img.src = sender === 'user' ? 'static/user-avatar.png' : 'static/bot-avatar.png';
+    img.alt = sender === 'user' ? 'User Avatar' : 'Bot Avatar';
+    img.width = 30;
+    img.height = 30;
+
+    const messageText = document.createElement('span');
+    messageText.textContent = text;
+
+    message.appendChild(img);
+    message.appendChild(messageText);
+    return message;
 }
 
 function clearChatMessages() {
-    document.getElementById('chatGPTResponse').innerHTML = ''; // Clear displayed messages
+    const chatContainer = document.getElementById('chatGPTResponse');
+    while (chatContainer.firstChild) {
+        chatContainer.removeChild(chatContainer.firstChild);
+    }
+}
+
+function clearConversation() {
+    clearChatMessages();
+    // Optional: Append a "Chat cleared" message if needed
+}
+
+function appendBotMessage(message) {
+    const messageElement = createMessage('bot', message);
+    document.getElementById('chatGPTResponse').appendChild(messageElement);
 }
