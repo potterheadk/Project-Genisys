@@ -53,7 +53,7 @@ def get_conversation_chain(vectorstore):
     )
     return conversation_chain
 
-@app.route('/Genisys')
+@app.route('/')
 def index():
     return render_template('index.html')
 
