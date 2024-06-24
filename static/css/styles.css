@@ -1,0 +1,296 @@
+@font-face {
+    font-family: 'Sohne Mono';
+    src: url('/static/fonts/SohneMono-Buch.otf') format('opentype');
+    /* Adjust the path to match your project structure */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Navbar properties */
+/* Navbar properties */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: rgba(52, 53, 65, 1);
+    position: fixed;
+    top: 0;
+    z-index: 1001;
+    color: white;
+}
+
+.leftnav a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 9rem;
+    margin-top: 1rem;
+    font-family: 'Sohne Mono', Arial, sans-serif;
+    color: #d1d5db;
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    padding: 0.5rem 0;
+    display: inline-block;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.leftnav a:hover {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.rightnav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 5rem;
+    font-size: 1.3rem;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+}
+
+.rightnav a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #ff4757;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.rightnav a:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+.rightnav a:hover {
+    color: #ff4757;
+    transition: color 0.3s ease;
+}
+
+body {
+    background-color: rgba(52, 53, 65, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: 100vh;
+    margin: 0;
+    font-family:'Sohne Mono', Arial, sans-serif;
+    color: #d1d5db;
+}
+
+
+.uploadButtonText {
+    margin-left: -75.5rem;
+    text-align: 0.5rem;
+    color: #a1a1aa;
+    font-size: 0.9rem;
+}
+
+.uploadTitle {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.fileFormats {
+    font-size: 0.9rem;
+    color: #a1a1aa;
+}
+
+.uploadbutton {
+    margin-bottom: 16rem;
+    margin-left: -78rem;
+}
+
+.fileUploadButton {
+    background-color: rgba(64, 65, 79, 1);
+    border: none;
+    color: #d1d5db;
+    cursor: pointer;
+    padding: 0.9rem 2rem;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 0.5rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+.fileUploadButton svg {
+    margin-right: 0.5rem;
+}
+
+.fileUploadButton:hover {
+    background-color: rgba(84, 85, 99, 1);
+}
+
+.chatContainer {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    bottom: 1rem;
+    z-index: 1000;
+    font-family: 'Sohne Mono'
+}
+
+.chatGPTResponse {
+    width: 100%;
+    overflow-y: auto;
+    max-height: 60vh;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    margin-left: 6rem;
+    background-color: rgba(47, 48, 61, 1);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Sohne Mono'
+}
+
+.bottom {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chatForm {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: rgba(64, 65, 79, 1);
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    margin-left: 5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Sohne Mono'
+}
+
+.chatGPTQuestion {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-family: 'Sohne Mono'
+}
+
+.sendButton {
+    background: none;
+    border: none;
+    color: #d1d5db;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Sohne Mono'
+}
+
+.sendButton svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.sendButton:hover {
+    color: white;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    margin-left: 3rem;
+}
+
+.clearButton {
+    background-color: rgba(64, 65, 79, 1);
+    border: none;
+    color: #d1d5db;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 0.5rem;
+    font-family: 'Sohne Mono'
+}
+
+.clearButton:hover {
+    background-color: rgba(84, 85, 99, 1);
+}
+
+.message {
+    background-color: rgba(64, 65, 79, 1);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    font-family: 'Sohne Mono'
+}
+
+.message.user {
+    background-color: rgba(79, 70, 229, 1);
+    color: white;
+    justify-content: flex-end;
+    font-weight: 500;
+    font-family: 'Sohne Mono'
+    
+}
+
+.message.bot {
+    background-color: rgba(64, 65, 79, 1);
+    color: white;
+    justify-content: flex-start;
+    margin-left: -1rem;
+    font-weight: 500;
+    font-family: 'Sohne Mono'
+}
+
+.message img {
+    border-radius: 50%;
+    margin-right: 0.6rem;
+    size-adjust: 1rem;
+    width: 4rem;
+    height: 4rem;
+}
+
+.message.user img {
+    order: 2;
+    margin-left: 0.6rem;
+    margin-right: 0;
+    width: 4rem;
+    height: 4rem;
+}
+
+
+@media screen and (max-width: 600px) {
+    .uploadButtonText, .uploadbutton {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .uploadbutton {
+        margin-bottom: 24rem;
+    }
+
+    .chatContainer {
+        margin-right: 5rem;
+        padding-top: 1rem;
+        bottom: 0;
+    }
+}
+

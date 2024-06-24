@@ -1,0 +1,32 @@
+<!-- templates/home.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home_css.css') }}">
+</head>
+<body>
+    <!-- Navbar here -->
+    <nav class="navbar">
+        <div class="leftnav">
+            <a href="#">Project Genisys</a>
+        </div>
+        <div class="rightnav">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('index') }}">Genisys</a>
+            <a href="{{ url_for('contacts') }}">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Your content here -->
+    <div class="content">
+        <!-- Your content here -->
+    </div>
+
+    <!-- Include your JavaScript file -->
+    <script src="{{ url_for('static', filename='js/home_js.js') }}"></script>
+</body>
+</html>

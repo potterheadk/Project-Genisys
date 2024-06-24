@@ -1,0 +1,60 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genisys</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- Navbar here -->
+    <nav class="navbar">
+        <div class="leftnav">
+            <a href="https://images.app.goo.gl/mJFUP4xfDSKiPDjG8" target="_blank">Project Genisys</a>
+        </div>
+        <div class="rightnav">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('index') }}">Genisys</a>
+            <a href="{{ url_for('contacts') }}">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Your content here -->
+    <div class="uploadButtonText">
+        <p class="uploadTitle">Upload File</p>
+        <p class="fileFormats">Accepted file formats: pdf, docx, text</p>
+    </div>
+
+    <div class="uploadbutton">
+        <!-- File Uploader -->
+        <label for="fileUpload" class="fileUploadButton">
+            <input type="file" id="fileUpload" accept=".docx,.pdf,.txt" style="display:none;" onchange="handleFileUpload(event)">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 17c0 2.209-1.791 4-4 4H6c-2.209 0-4-1.791-4-4V7c0-2.209 1.791-4 4-4h2V1h2v2h8V1h2v2h2c2.209 0 4 1.791 4 4v10zM8 8v2h8V8H8z"></path>
+            </svg>
+            Upload File
+        </label>
+    </div>
+
+    <div class="chatContainer">
+        <div class="chatGPTResponse" id="chatGPTResponse"></div>
+        <div class="bottom">
+            <form class="chatForm" id="chatForm" onsubmit="sendQuery(event);">
+                <input type="text" id="chatGPTQuestion" class="chatGPTQuestion" placeholder="Type your question..." />
+                <button type="submit" class="sendButton">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" class="h-4 w-4 rotate-90" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path>
+                    </svg>
+                </button>
+            </form>
+            <div class="buttons">
+                <button class="clearButton" onclick="clearConversation()">Clear Conversation</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
