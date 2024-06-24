@@ -1,3 +1,5 @@
+# app.py
+
 import os
 from flask import Flask, request, jsonify, render_template
 from PyPDF2 import PdfReader
@@ -67,7 +69,9 @@ def process():
     global conversation_chains
     conversation_chains['default'] = conversation_chain
 
-    return jsonify({"message": "PDFs processed successfully."})
+    # Return a response indicating PDFs processed successfully
+    response_message = "PDFs processed successfully. Ready to answer questions based on the file."
+    return jsonify({"message": response_message})
 
 @app.route('/ask', methods=['POST'])
 def ask():
@@ -84,4 +88,4 @@ def ask():
     return jsonify({"chat_history": messages})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
