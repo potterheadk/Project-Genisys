@@ -5,9 +5,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>Contact Page</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/contacts_css.css') }}">
+    <link rel="shortcut icon" href="..//static/Img/contact_favicon.png" type="image/x-icon">
+
+    <script src="https://kit.fontawesome.com/3ea0667da6.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <!-- Navbar here -->
     <nav class="navbar">
@@ -21,9 +25,50 @@
         </div>
     </nav>
 
-    <!-- Your content here -->
-    <div class="content">
-        <!-- Your content here -->
+    <!-- Contact Section -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Us</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i> company_email@gmail.com</p>
+                    <p><i class="fa-solid fa-square-phone"></i> 9423134469</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" placeholder="Your Message" rows="6"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg">
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="map">
+            <div class="left">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Genisys</a></li>
+                    <li><a href="#">More About Us</a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3779.7576790218795!2d73.8898626745987!3d18.674866864444063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c7cbe596e70b%3A0xff10439adb1b0066!2sMIT%20Alandi%20Campus!5e0!3m2!1sen!2sin!4v1719513273294!5m2!1sen!2sin" width="600" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright &copy; 2024. Made with <i class="fa-solid fa-heart"></i> by Genisys AI.</p>
+        </div>
     </div>
 
     <!-- Include your JavaScript file -->

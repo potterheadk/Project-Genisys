@@ -1,296 +1,381 @@
-@font-face {
-    font-family: 'Sohne Mono';
-    src: url('/static/fonts/SohneMono-Buch.otf') format('opentype');
-    /* Adjust the path to match your project structure */
-    font-weight: normal;
-    font-style: normal;
+:root {
+    --primary-color: #0a192f;
+    --secondary-color: #64ffda;
+    --text-color: #e6f1ff;
+    --background-color: #0a192f;
+    --card-background: #172a45;
 }
 
-/* Navbar properties */
-/* Navbar properties */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar styles - completely separated */
 .navbar {
+    background-color: rgba(10, 25, 47, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+}
+
+.navbar__container {
+    max-width: 1526px;
+    margin: 0 auto;
+    padding: 1rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    padding: 1rem 2rem;
-    background-color: rgba(52, 53, 65, 1);
-    position: fixed;
-    top: 0;
-    z-index: 1001;
-    color: white;
 }
 
-.leftnav a {
+.navbar__logo a {
     font-size: 1.5rem;
     font-weight: bold;
-    margin-left: 9rem;
-    margin-top: 1rem;
-    font-family: 'Sohne Mono', Arial, sans-serif;
-    color: #d1d5db;
+    color: var(--secondary-color);
     text-decoration: none;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-    padding: 0.5rem 0;
-    display: inline-block;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-.leftnav a:hover {
-    color: #ffffff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.rightnav a {
-    color: white;
-    text-decoration: none;
-    margin-right: 5rem;
-    font-size: 1.3rem;
-    position: relative;
-    padding: 0.5rem 0;
     transition: color 0.3s ease;
 }
 
-.rightnav a::before {
+.navbar__links {
+    display: flex;
+    list-style: none;
+    margin-left: 38rem;
+    margin-right:-20rem;
+}
+
+.navbar__links li {
+    margin-left: 3.7rem;
+}
+
+.navbar__links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar__links a::after {
     content: '';
     position: absolute;
     width: 0;
     height: 2px;
-    bottom: 0;
-    left: 50%;
-    background-color: #ff4757;
-    transition: width 0.3s ease, left 0.3s ease;
-}
-
-.rightnav a:hover::before {
-    width: 100%;
+    bottom: -5px;
     left: 0;
+    background-color: var(--secondary-color);
+    transition: width 0.3s ease;
 }
 
-.rightnav a:hover {
-    color: #ff4757;
-    transition: color 0.3s ease;
+.navbar__links a:hover {
+    color: var(--secondary-color);
 }
 
-body {
-    background-color: rgba(52, 53, 65, 1);
+.navbar__links a:hover::after {
+    width: 100%;
+}
+
+/* Main content */
+.main {
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    min-height: 100vh;
-    margin: 0;
-    font-family:'Sohne Mono', Arial, sans-serif;
-    color: #d1d5db;
+    padding-top: 80px;
+    padding-bottom: 2rem;
 }
 
-
-.uploadButtonText {
-    margin-left: -75.5rem;
-    text-align: 0.5rem;
-    color: #a1a1aa;
-    font-size: 0.9rem;
-}
-
-.uploadTitle {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: white;
-    margin-bottom: 0.5rem;
-}
-
-.fileFormats {
-    font-size: 0.9rem;
-    color: #a1a1aa;
-}
-
-.uploadbutton {
-    margin-bottom: 16rem;
-    margin-left: -78rem;
-}
-
-.fileUploadButton {
-    background-color: rgba(64, 65, 79, 1);
-    border: none;
-    color: #d1d5db;
-    cursor: pointer;
-    padding: 0.9rem 2rem;
-    border-radius: 25px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 0 0.5rem;
-    display: inline-flex;
-    align-items: center;
-}
-
-.fileUploadButton svg {
-    margin-right: 0.5rem;
-}
-
-.fileUploadButton:hover {
-    background-color: rgba(84, 85, 99, 1);
-}
-
-.chatContainer {
-    width: 90%;
-    max-width: 800px;
+.main__container {
+    max-width: 900px;
     margin: 0 auto;
-    padding-top: 15rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: fixed;
-    bottom: 1rem;
-    z-index: 1000;
-    font-family: 'Sohne Mono'
+    padding: 0 20px;
+    width: 95%;
 }
 
-.chatGPTResponse {
-    width: 100%;
-    overflow-y: auto;
-    max-height: 60vh;
-    padding: 2rem;
-    margin-bottom: 1rem;
-    margin-left: 6rem;
-    background-color: rgba(47, 48, 61, 1);
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-family: 'Sohne Mono'
-}
-
-.bottom {
-    width: 100%;
+.main__content {
     display: flex;
+    flex-grow: 1;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    height: auto;
+    min-height: calc(100vh - 180px);
     justify-content: center;
-    flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    padding-top: 2rem;
 }
 
-.chatForm {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    background-color: rgba(64, 65, 79, 1);
-    border-radius: 25px;
-    padding: 0.5rem 1rem;
-    margin-left: 5rem;
+.upload-section {
+    width: 250px;
+    margin-right: 2rem;
+}
+
+.upload-section__container {
+    background-color: var(--card-background);
+    border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-family: 'Sohne Mono'
+    padding: 2rem;
+    width:15rem;
+    margin-left: -8rem;
 }
 
-.chatGPTQuestion {
+.upload-section__title {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.upload-section__formats {
+    font-size: 0.9rem;
+    color: #a1a1aa;
+    margin-bottom: 1rem;
+}
+
+.upload-section__button {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.upload-section__button:hover {
+    background-color: #45e0bc;
+}
+
+
+.file-formats {
+    font-size: 0.9rem;
+    color: #a1a1aa;
+    margin-bottom: 1rem;
+}
+
+.upload-button {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+/* Chat container */
+.chat-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--card-background);
+    border-radius: 26px;
+    overflow: hidden;
+    height: 70vh;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.chat-response {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100% - 120px);
+}
+
+.chat-bottom {
+    padding: 1rem;
+    background-color: var(--card-background);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.chat-form {
+    display: flex;
+    background-color: var(--primary-color);
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.chat-input {
     flex-grow: 1;
     border: none;
     outline: none;
     background: none;
-    color: white;
-    padding: 0.5rem 1rem;
+    color: var(--text-color);
+    padding: 0.8rem 1rem;
     font-size: 1rem;
-    font-family: 'Sohne Mono'
 }
 
-.sendButton {
+.send-button {
     background: none;
     border: none;
-    color: #d1d5db;
+    color: var(--secondary-color);
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Sohne Mono'
+    padding: 0.8rem 1rem;
+    font-size: 1.2rem;
 }
 
-.sendButton svg {
-    width: 1.5rem;
-    height: 1.5rem;
-}
-
-.sendButton:hover {
-    color: white;
-}
-
-.buttons {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    margin-left: 3rem;
-}
-
-.clearButton {
-    background-color: rgba(64, 65, 79, 1);
+.clear-button {
+    width: 100%;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
     border: none;
-    color: #d1d5db;
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
-    padding: 0.5rem 1rem;
-    border-radius: 25px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 0 0.5rem;
-    font-family: 'Sohne Mono'
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
-.clearButton:hover {
-    background-color: rgba(84, 85, 99, 1);
+.clear-button:hover {
+    background-color: #45e0bc;
 }
 
+/* Footer */
+.footer {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 1rem 0;
+    width: 100%;
+}
+
+/* Message styles */
 .message {
-    background-color: rgba(64, 65, 79, 1);
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    margin-bottom: 1.5rem;
-    width: 95%;
     display: flex;
-    align-items: center;
-    font-family: 'Sohne Mono'
-}
-
-.message.user {
-    background-color: rgba(79, 70, 229, 1);
-    color: white;
-    justify-content: flex-end;
-    font-weight: 500;
-    font-family: 'Sohne Mono'
-    
-}
-
-.message.bot {
-    background-color: rgba(64, 65, 79, 1);
-    color: white;
-    justify-content: flex-start;
-    margin-left: -1rem;
-    font-weight: 500;
-    font-family: 'Sohne Mono'
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    max-width: 80%;
 }
 
 .message img {
-    border-radius: 50%;
-    margin-right: 0.6rem;
-    size-adjust: 1rem;
-    width: 4rem;
-    height: 4rem;
+    width: 30px;
+    height: 30px;
+    margin-right: 0.5rem;
+    flex-shrink: 0;
 }
 
-.message.user img {
-    order: 2;
-    margin-left: 0.6rem;
-    margin-right: 0;
-    width: 4rem;
-    height: 4rem;
+.message span {
+    background-color: var(--card-background);
+    padding: 0.7rem;
+    border-radius: 5px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
+.user {
+    align-self: flex-end;
+}
 
-@media screen and (max-width: 600px) {
-    .uploadButtonText, .uploadbutton {
-        margin-left: 0;
-        text-align: center;
+.user span {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .main__content {
+        flex-direction: column;
+        height: auto;
+        min-height: 0;
     }
 
-    .uploadbutton {
-        margin-bottom: 24rem;
+    .upload-section {
+        width: 100%;
+        margin-bottom: 2rem;
     }
 
-    .chatContainer {
-        margin-right: 5rem;
-        padding-top: 1rem;
-        bottom: 0;
+    .chat-container {
+        width: 100%;
+        height: 60vh;
+        max-height: none;
+    }
+
+    .navbar__links {
+        position: fixed;
+        right: -250px;
+        top: 0;
+        flex-direction: column;
+        background-color: rgba(23, 42, 69, 0.95);
+        width: 250px;
+        height: 100vh;
+        z-index: 999;
+        transition: right 0.3s ease;
+        padding-top: 60px;
+        backdrop-filter: blur(3px);
+    }
+
+    .navbar__links.active {
+        right: 0;
+    }
+
+    .navbar__links li {
+        margin: 1rem 0;
+    }
+
+    .hamburger {
+        display: block;
+        z-index: 1000;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
     }
 }
 
+/* Overlay */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(3px);
+    z-index: 998;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* Additional fix for very small screens */
+@media screen and (max-height: 600px) {
+    .chat-container {
+        height: 400px;
+    }
+}

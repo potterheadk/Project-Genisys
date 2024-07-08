@@ -1,3 +1,19 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const overlay = document.querySelector('.overlay');
+
+    hamburger.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+
+    function toggleMenu() {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        overlay.classList.toggle('active');
+    }
+
+});
+
 document.getElementById('chatForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent default form submission
 
@@ -107,3 +123,4 @@ function appendBotMessage(message) {
     const messageElement = createMessage('bot', message);
     document.getElementById('chatGPTResponse').appendChild(messageElement);
 }
+
