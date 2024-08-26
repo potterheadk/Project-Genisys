@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume and Job Description Comparison</title>
+    <link rel="stylesheet" href="static/helper.css">
+</head>
+<body>
+
+    <div class="header">
+        <a href="#" class="logo">Project <span>Monday</span></a>
+        <div class="nav">
+        <a href="/">Home</a>
+        <a href="/predict">Predictor</a>
+        <a href="/helper">Helper</a>
+        <a href="/insights">Insights</a>
+    </div>
+    </div>
+
+    <div class="container">
+    <h1>Resume and Job Description Comparison</h1>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    
+        <form action="/compare" method="post" enctype="multipart/form-data">
+        <label for="resume">Upload Your Resume (in .docx format):</label><br>
+        <div class="button"><input type="file" id="resume" name="resume" accept=".docx" required><br><br></div>
+
+        <label for="job">Upload Job Description (in .docx format):</label><br>
+        <input type="file" id="job" name="job" accept=".docx" required><br><br>
+        <input type="submit" value="Compare">
+    </form>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-image: url('predict_background.jpg');
+    background-size: cover;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.header{
+    
+    display: flex;
+    justify-content: space-between;
+    height: 10vh;
+    width: 100%;
+    /* border: 2px solid red; */
+    align-items: center;
+
+}
+
+.logo{
+    margin-top: 50px;
+
+    padding: 3%;
+    font-size: 50px;
+    color: rgb(255, 242, 222);
+    text-decoration: none;
+    font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+
+
+}
+
+.logo span{
+    color: #44baff;
+}
+
+
+
+
+.nav{
+    margin-top: 50px;
+    display: flex;
+    font-size: 28px;
+    font-weight: 400;
+    /* border: 2px solid red; */
+    align-items: center;
+    height: 8vh;
+
+    border-radius: 20px;
+
+    
+}
+
+.nav a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    transition: 0.3s;
+    padding: 5px 20px;
+    margin-left: 20px;
+    transition: 0.3s;
+    font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+}
+
+
+.nav a:hover{
+    border: 2px solid rgb(0, 41, 82);
+    border-radius: 10px ;
+
+    color:  rgb(0, 208, 239);
+    
+}
+
+.container {
+    max-width: 800px;
+    margin-top: 50px;
+    margin-left: 25%;
+    padding: 20px;
+    
+    /* background-color: rgba(255, 255, 255, 0.8); /* semi-transparent background */
+    border-radius: 10px; 
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: 900;
+}
+
+.plot-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+canvas {
+    display: block;
+    margin: 0 auto;
+    background-color: #ffffffdc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.input-container {
+    margin-bottom: 20px;
+}
+
+.input-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: white;
+    font-weight: 600;
+}
+
+.input-container input[type="text"] {
+    width: 100%; /* Set the width to 100% */
+    padding: 10px;
+    font-size: 24px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.input-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #00d0ef;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.input-container button:hover {
+    background-color: #008db1;
+}

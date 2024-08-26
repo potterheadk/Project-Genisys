@@ -1,0 +1,45 @@
+body {
+    background-image: url('background.jpg');
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    justify-content: flex-end; /* Aligns content to the right */
+    align-items: flex-end; /* Aligns content to the bottom */
+    height: 100vh; /* Makes the container take up the full height of the viewport */
+    margin: 0; /* Removes default margin */
+    padding: 20px; /* Adds some padding */
+}
+
+/* Style for the container */
+.container {
+    margin-top: 50px;
+    text-align: center;
+}
+
+/* Style for the result message */
+.alert {
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+/* Style for the back button */
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    color: #fff;
+}

@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-image: url('background.jpg');
+    background-size: cover;
+}
+/* 
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+} */
+
+.header{
+    
+    display: flex;
+    justify-content: space-between;
+    height: 10vh;
+    width: 100%;
+    /* border: 2px solid red; */
+    align-items: center;
+
+}
+
+.logo{
+    margin-top: 50px;
+
+    padding: 3%;
+    font-size: 50px;
+    color: rgb(255, 242, 222);
+    text-decoration: none;
+    font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+
+
+}
+
+.logo span{
+    color: #44baff;
+}
+
+
+
+
+.nav{
+    margin-top: 50px;
+    display: flex;
+    font-size: 28px;
+    font-weight: 400;
+    /* border: 2px solid red; */
+    align-items: center;
+    height: 8vh;
+
+    border-radius: 20px;
+
+    
+}
+
+.nav a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    transition: 0.3s;
+    padding: 5px 20px;
+    margin-left: 20px;
+    transition: 0.3s;
+    font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+}
+
+
+.nav a:hover{
+    border: 2px solid rgb(0, 41, 82);
+    border-radius: 10px ;
+
+    color:  rgb(0, 208, 239);
+    
+}
+
+.main{
+    /* border: 2px solid red; */
+    margin-top: 191px;
+    width: 600px;
+    margin-left: 50px;
+    position: fixed;
+    left: 50%;
+}
+.main h2{
+    display: flex;
+    width: 800px;
+    margin: 0;
+    color: rgb(240, 240, 240);
+    /* border: 2px solid red; */
+    align-items: flex-end;
+    font-size: 32px;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    border-radius: 30px;
+
+}
+.main span{
+    margin-left: 10px;
+    color: rgb(236, 236, 236);
+}
+.main span1{
+    margin-left: 10px;
+    color: rgb(0, 233, 233);
+}
+
+.main h1{
+    display: flex;
+    align-items: flex-end;
+    color: rgb(131, 203, 255);
+    margin: 0 0 0 0px;
+    width: fit-content;
+    font-size: 90px;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    padding-top: 0;
+
+    /* border: 3px solid orange; */
+}
+
+

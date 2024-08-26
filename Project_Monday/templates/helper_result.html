@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/helper_result.css">
+    <title>Comparison Result</title>
+</head>
+<body>
+
+    <div class="container">
+    <h1>Comparison Result</h1>
+<!--    <h2>Your Resume:</h2>-->
+<!--    <p>{{ resume_text }}</p>-->
+<!--    <h2>Job Description:</h2>-->
+<!--    <p>{{ job_text }}</p>-->
+    <h2>Your Resume and Job Desc Matches Around: {{ match_percentage }}%</h2>
+    {% if suggested_jobs %}
+        <h2>Suggested Jobs:</h2>
+        <ul>
+            {% for job in suggested_jobs %}
+                <li>
+                    <strong>{{ job['Job Title'] }}</strong><br>
+                    {{ job['Job Description'] }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No job suggestions available.</p>
+    {% endif %}
+
+</div>
+
+</body>
+</html>

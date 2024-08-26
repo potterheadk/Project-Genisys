@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admission Prediction</title>
+    <script src="{{ url_for('static', filename='app2.js') }}"></script>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='predict.css') }}"
+    />
+    <audio id="projectMondaySong" src="static/motivation.mp3"></audio>
+
+  
+
+  </head>
+
+  <body>
+    <!-- <div class="background">
+        <video autoplay muted loop id="background-video">
+            <source src="static/LiveBackground.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div> -->
+
+    <!--page1-->
+    <div class="header">
+      <a href="/" class="logo" id="projectMondayLink">Project <span>Monday</span></a>
+      <div class="nav">
+        
+        <a href="/">Home</a>
+        <a href="/predict">Predictor</a>
+        <a href="/helper">Helper</a>
+        <a href="/insights">Insights</a>
+    </div>
+    
+    </div>
+
+    <section>
+      <div class="topic-menu">
+        <button class="toggleBtn">
+          <div class="svg-wrapper">
+            <div class="svg-wrapper-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+              >
+                <path fill="none" d="M0 0h24v24H0z"></path>
+                <path
+                  fill="currentColor"
+                  d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <span>Know About</span>
+        </button>
+        <div class="sub-content"></div>
+
+        <button class="toggleBtn">
+          <div class="svg-wrapper">
+            <div class="svg-wrapper-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+              >
+                <path fill="none" d="M0 0h24v24H0z"></path>
+                <path
+                  fill="currentColor"
+                  d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <span>GRE</span>
+        </button>
+        <div class="sub-content">
+          <div class="logo-container">
+            <img
+              src="static/harvard_logo.png"
+              class="college-logo"
+              alt="Harvard Logo"
+            />
+            <img
+              src="static/mit_logo.png"
+              class="college-logo"
+              alt="Stanford Logo"
+            />
+            <img
+              src="static/oxford_logo.png"
+              class="college-logo"
+              alt="Oxford Logo"
+            />
+            <img
+              src="static/standford_logo.png"
+              class="college-logo"
+              alt="Stanford Logo"
+            />
+          </div>
+          <ul>
+            <li>
+              The GRE is a standardized test required for admission to many
+              graduate programs worldwide.
+            </li>
+            <li>
+              It assesses verbal reasoning, quantitative reasoning, analytical
+              writing, and critical thinking skills.
+            </li>
+            <li>
+              Scores are used by admissions committees to evaluate applicants'
+              readiness for graduate-level academic work.
+            </li>
+            <li>
+              The test is administered by the Educational Testing Service (ETS)
+              and can be taken at designated test centers worldwide.
+            </li>
+          </ul>
+        </div>
+
+        <button class="toggleBtn">
+          <div class="svg-wrapper">
+            <div class="svg-wrapper-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+              >
+                <path fill="none" d="M0 0h24v24H0z"></path>
+                <path
+                  fill="currentColor"
+                  d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <span>TOEFL</span>
+        </button>
+        <div class="sub-content">
+          <div class="logo-container-tofel">
+            <img
+              src="static/tofel_log.png"
+              class="tofel-logo"
+              alt="togel_logo"
+            />
+          </div>
+          <ul>
+            <li>
+              The TOEFL is a standardized test for non-native English speakers
+              to demonstrate proficiency in English.
+            </li>
+            <li>
+              It's commonly required for admission to English-speaking
+              universities and colleges.
+            </li>
+            <li>
+              The test assesses reading, listening, speaking, and writing skills
+              in English.
+            </li>
+            <li>
+              Like the GRE, TOEFL scores are used by admissions committees to
+              evaluate applicants' language abilities.
+            </li>
+          </ul>
+        </div>
+
+        <button class="toggleBtn">
+          <div class="svg-wrapper">
+            <div class="svg-wrapper-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+              >
+                <path fill="none" d="M0 0h24v24H0z"></path>
+                <path
+                  fill="currentColor"
+                  d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <span>SOP (Statement of Purpose)</span>
+        </button>
+        <div class="sub-content">
+          <ul>
+            <li>
+              A Statement of Purpose is a written essay that accompanies a
+              graduate school application.
+            </li>
+            <li>
+              It outlines an applicant's academic background, career goals,
+              reasons for pursuing a particular program, and relevant
+              experiences.
+            </li>
+            <li>
+              The SOP is an opportunity for applicants to showcase their
+              motivation, qualifications, and fit for the program they're
+              applying to.
+            </li>
+            <li>
+              It's important for applicants to be clear, concise, and compelling
+              in their statements.
+            </li>
+          </ul>
+        </div>
+
+        <button class="toggleBtn">
+          <div class="svg-wrapper">
+            <div class="svg-wrapper-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+              >
+                <path fill="none" d="M0 0h24v24H0z"></path>
+                <path
+                  fill="currentColor"
+                  d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <span>LOR (Letter of Recommendation)</span>
+        </button>
+        <div class="sub-content">
+          <ul>
+            <li>
+              A Letter of Recommendation is a document written by someone who
+              knows the applicant well academically or professionally.
+            </li>
+            <li>
+              It provides insights into the applicant's character, skills,
+              achievements, and potential for success in graduate studies.
+            </li>
+            <li>
+              Typically, letters are written by professors, employers, or
+              mentors who can speak to the applicant's abilities and
+              qualifications.
+            </li>
+            <li>
+              Strong letters of recommendation can greatly enhance an
+              applicant's chances of admission, as they offer additional
+              perspectives on the applicant beyond what's presented in their
+              application materials.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="container mt-5">
+      <div class="form_container">
+        <form action="/predict" method="post">
+          <div class="form-group">
+            <label for="gre_score">GRE Score:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="gre_score"
+              placeholder="Enter GRE Score"
+              name="GRE Score"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="toefl_score">TOEFL Score:</label>
+            <input
+              type="number"
+              class="form-control"
+              placeholder="Enter TOEFL Score"
+              id="toefl_score"
+              name="TOEFL Score"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="university_rating">University Tier:</label>
+            <input
+              type="number"
+              class="form-control"
+              placeholder="1 =Best 5 =Worst"
+              id="university_rating"
+              name="University Rating"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="sop">SOP (Statement of Purpose):</label>
+            <input
+              type="number"
+              placeholder="Rate your SOP(5(best)-1(Worst))"
+              step="0.01"
+              class="form-control"
+              id="sop"
+              name="SOP"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="lor">LOR (Letter of Recommendation):</label>
+            <input
+              type="number"
+              placeholder="Similar to LOR"
+              step="0.01"
+              class="form-control"
+              id="lor"
+              name="LOR"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="cgpa">CGPA:</label>
+            <input
+              type="number"
+              placeholder="Out of 10"
+              step="0.01"
+              class="form-control"
+              id="cgpa"
+              name="CGPA"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="research">Research (0 for No, 1 for Yes):</label>
+            <input
+              type="number"
+              class="form-control"
+              id="research"
+              name="Research"
+              required
+            />
+          </div>
+
+          <div class="select_branch">
+            <select name="Branch" required="required">
+              <option value="" disabled selected>Select Branch</option>
+              <option value="CS">Computer Science (CS)</option>
+              <option value="ENTC">
+                Electronics and Telecommunication (ENTC)
+              </option>
+              <option value="Mech">Mechanical (Mech)</option>
+              <option value="Civil">Civil Engineering (Civil)</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+      </div>
+    </div>
+
+    <!--page2-->
+
+    <script src="static/script.js"></script>
+    <!-- Link to JavaScript file -->
+  </body>
+</html>

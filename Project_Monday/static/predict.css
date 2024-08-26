@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-image: url('bg.jpg');
+    background-size: cover;
+}
+
+.header{
+    
+    display: flex;
+    justify-content: space-between;
+    height: 10vh;
+    width: 100%;
+    /* border: 2px solid red; */
+    align-items: center;
+
+}
+
+.logo{
+    margin-top: 50px;
+    padding: 3%;
+    font-size: 50px;
+    color: rgb(255, 242, 222);
+    text-decoration: none;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+
+
+}
+
+.logo span{
+    color: #44baff;
+}
+
+
+
+
+.nav{
+    margin-top: 50px;
+    display: flex;
+    font-size: 28px;
+    font-weight: 400;
+    /* border: 2px solid red; */
+    align-items: center;
+    height: 8vh;
+
+    border-radius: 20px;
+
+    
+}
+
+.nav a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    transition: 0.3s;
+    padding: 5px 20px;
+    margin-left: 20px;
+    transition: 0.3s;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+}
+
+
+.nav a:hover{
+    border-radius: 10px ;
+
+    color:  rgb(0, 208, 239);
+    
+}
+.container {
+    margin-top: 3%;
+    padding: 10px;
+    border-radius: 20px;
+    width: 60%;
+    max-width: 600px;
+    align-self: flex-end;
+    margin-left: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Center items vertically */
+}
+
+label {
+    margin-right: 10px; /* Add spacing between label and input */
+    color: white;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.form-control {
+    flex: 1; /* Allow input to take remaining space */
+    padding: 8px; /* Reduced padding for form controls */
+    border-radius: 4px; /* Reduced border radius for form controls */
+    background-color: rgba(25, 1, 1, 0.788);
+    color: rgba(240, 248, 255, 0.78);
+    font-size: 24px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-primary {
+    background-color: #08cdd7;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px; /* Reduced padding for the button */
+    cursor: pointer;
+    font-size: 18px; /* Reduced font size for the button */
+}
+
+.toggleBtn, .sub-content {
+    font-size: 20px; /* Increased font size */
+    color: #fff; /* Changed text color to white */
+    
+}
+
+section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 0vh;
+}
+
+.topic-menu {
+   
+    border-radius: 20px;
+    padding: 60px;
+    max-width: 650px;
+
+    transition: box-shadow 0.3s ease;
+}
+
+
+
+.toggleBtn {
+    background-color: #236690;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 15px 30px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggleBtn:hover {
+    background-color: #3b2b45;
+}
+
+.sub-content {
+    padding: 10px 0;
+    display: none;
+    text-align: center;
+}
+
+.sub-content.show {
+    display: block;
+}
+
+.sub-content ul {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #170025be;
+}
+
+.sub-content li {
+    color: #fff;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+footer {
+    text-align: left;
+    padding: 20px 60px;
+    background-color: rgba(34, 34, 34, 0.9);
+    color: #fff;
+}
+
+.logo-container,
+.logo-container-tofel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.college-logo,
+.tofel-logo {
+    width: 90px;
+    height: auto;
+}
+
+.tofel-logo {
+    width: 110px;
+}
+
+.show {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease-in-out;
+}
+
+button span {
+    display: block;
+    margin: 0 auto;
+    transition: all 0.3s;
+}
+
+button .svg-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-right: 0.3em;
+    transition: all 0.3s;
+}
+
+button:hover .svg-wrapper {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+button:hover svg {
+    transform: rotate(45deg);
+}
+
+
+.form_container{
+    display: flex;
+    width: 600px;
+    /* border: 2px solid green; */
+    margin-left: -200px;
+}
+
+.select_branch{
+    width: fit-content;
+}
+
+select[name="Branch"] {
+    width: 100%; /* Set the width to 100% */
+    padding: 8px; /* Increase padding */
+    font-size: 16px; /* Increase font size */
+    border-radius: 4px; /* Adjust border radius */
+    background-color: rgba(56, 1, 1, 0.856); /* Adjust background color */
+    color: rgba(148, 205, 255, 0.898);
+}
+
+
